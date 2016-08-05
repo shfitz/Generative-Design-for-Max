@@ -135,14 +135,6 @@ function alpha(alphaCase){
     }   
 }
 
-function scrap(){
-    colorSetting = 0;
-}
-
-function onclick(x,y,but,cmd,shift,capslock,option,ctrl){
-    makeLines();
-}
-
 function onclick(x,y,but,cmd,shift,capslock,option,ctrl){
     makeLines();
 }
