@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 3.0, 79.0, 875.0, 785.0 ],
+		"rect" : [ 80.0, 143.0, 875.0, 785.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 174.0, 667.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "57"
+					"text" : "127"
 				}
 
 			}
@@ -57,7 +57,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 316.0, 42.0, 37.0, 22.0 ],
-					"presentation_rect" : [ 316.0, 45.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "reset"
 				}
@@ -253,12 +252,12 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 38.0, 74.0, 103.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "P_2_3_4_01.js",
+						"filename" : "P_2_3_6_01.js",
 						"parameter_enable" : 0
 					}
 ,
 					"style" : "",
-					"text" : "js P_2_3_4_01.js"
+					"text" : "js P_2_3_6_01.js"
 				}
 
 			}
@@ -543,8 +542,8 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "P_2_3_4_01.js",
-				"bootpath" : "~/github/Generative-Design-for-Max/01_P/P_2_3_4_01",
+				"name" : "P_2_3_6_01.js",
+				"bootpath" : "~/github/Generative-Design-for-Max/01_P/P_2_3_6_01",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

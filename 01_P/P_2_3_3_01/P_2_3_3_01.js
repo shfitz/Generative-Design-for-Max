@@ -1,43 +1,61 @@
 // set some generic vars
+//
 autowatch = 1;
 var width = 800;
 var height = 450;
 var mouseX = 0;
 var mouseY = 0;
 var mouseIsPressed = false;
+//
+// set up matrix and mgraphics
+//
 var mgraphics = new MGraphics(width, height);
 var outmatrix = new JitterMatrix(4, "char", width, height);
+//
 // project specific vars
-var moduleSize = .25;
-
+//
+var letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+var fontSizeMin = 3;
 var x = mouseX;
 var y = mouseY;
-
+var angleDistortion = 0.0;
 var stepSize = 2.5;
-var currentShape = "01.svg";
-
+var counter = 0;
+//
+//darw the background once
+//
 mgraphics.set_source_rgba(1, 1, 1, 1);
 mgraphics.paint();
+//
+var fontlist = mgraphics.getfontlist();
+for (var i = 0; i < fontlist.length; i++) {
+    post(fontlist[i]);
+    post();
+}
 
 function bang() {
-
     with(mgraphics) {
         if (mouseIsPressed) {
             var d = dist(x, y, mouseX, mouseY);
+            set_source_rgba(0, 0, 0, 1);
+            set_font_size(fontSizeMin + d / 2);
+            select_font_face("Comic Sans MS");
+            var newLetter = letters[counter];
+            var letSize = text_measure(letters[counter]);
+            stepSize = letSize[0];
             if (d > stepSize) {
                 var angle = Math.atan2(mouseY - y, mouseX - x);
                 save();
-                translate(mouseX, mouseY);
-                rotate(angle+Math.PI);
-                
-                scale(moduleSize*(d/3), moduleSize);                
-                svg_render(currentShape);
-                
-                stroke();
+                translate(x, y);
+                rotate(angle + Math.random() * angleDistortion);
+                move_to(0, 0);
+                text_path(newLetter);
+                fill();
                 restore();
+                counter++;
+                if (counter > letters.length - 1) counter = 0;
                 x = x + Math.cos(angle) * stepSize;
                 y = y + Math.sin(angle) * stepSize;
-                
             }
         }
     }
@@ -58,20 +76,8 @@ function randomInt(min, max) {
 }
 
 function keypressed(key) {
-    if (key == "49") currentShape = "01.svg";
-    if (key == "50") currentShape = "02.svg";
-    if (key == "51") currentShape = "03.svg";
-    if (key == "52") currentShape = "04.svg";
-    if (key == "53") currentShape = "05.svg";
-    if (key == "54") currentShape = "06.svg";
-    if (key == "55") currentShape = "07.svg";
-    if (key == "56") currentShape = "08.svg";
-    if (key == "57") currentShape = "09.svg";
-    
-    if (key == "30") moduleSize += 5.0;
-    if (key == "31") moduleSize -= 5.0;
-    if (key == "28") stepSize -= 0.5;
-    if (key == "29") stepSize += 0.5;    
+    if (key == "1") drawMode = 1;
+    if (key == "2") drawMode = 2;
 }
 
 function toRadians(angleDegrees) {
@@ -95,7 +101,7 @@ function dist(x1, y1, x2, y2) {
     return theVal;
 }
 
-function reset(){
+function reset() {
     mgraphics.set_source_rgba(1, 1, 1, 1);
     mgraphics.paint();
 }
@@ -104,6 +110,7 @@ function mousePressed() {
     mouseIsPressed = true;
     x = mouseX;
     y = mouseY;
+    color = [Math.random(), Math.random(), Math.random(), randomInt(0, 100) / 255.];
 }
 
 function mouseReleased() {
