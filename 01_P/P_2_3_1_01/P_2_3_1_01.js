@@ -11,6 +11,7 @@ var outmatrix = new JitterMatrix(4, "char", width, height);
 var lineLength = 0;
 var angle = 0;
 var angleSpeed = 2.0;
+var color = [.70, .61, .0, .39]
 
 function bang() {
     with(mgraphics) {
@@ -18,8 +19,8 @@ function bang() {
         paint();
         if (mouseIsPressed) {
             save();
-            set_line_width(1.0);
-            set_source_rgba(.65, .1, .85, 1.);
+            set_line_width(.5);
+            set_source_rgba(color);
             translate(mouseX, mouseY);
             rotate(toRadians(angle));
             move_to(0, 0);
@@ -46,10 +47,20 @@ function randomInt(min, max) {
 }
 
 function keypressed(key) {
-      if (key=='d' || key=='D') {
-    angle = angle + 180;
-    angleSpeed = angleSpeed * -1;
-  }
+    if (key == 'd') {
+        angle = angle + 180;
+        angleSpeed = angleSpeed * -.5;
+    }
+    if (key == "up") lineLength += 2.5;
+    if (key == "down") lineLength -= 2.5;
+    if (key == "left") angleSpeed -= 0.25;
+    if (key == "right") angleSpeed += 0.25;
+
+    if (key == "0") color = [Math.random(), Math.random(), Math.random(), randomInt(80, 150)/255.];
+    if (key == "1") color = [.709, .616, .0, .39];
+    if (key == "2") color = [0., .51,.64 ,.39];
+    if (key == "3") color = [.34, .137, .505 ,.39];
+    if (key == "4") color = [.77, 0., .48 ,.39];    
 }
 
 function toRadians(angleDegrees) {
@@ -75,7 +86,7 @@ function mY(y) {
 
 function mousePressed() {
     mouseIsPressed = true;
-    lineLength = randomInt(70, 200);
+    lineLength = randomInt(35, 100);
 }
 
 function mouseReleased() {
