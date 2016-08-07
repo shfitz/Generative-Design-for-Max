@@ -5,6 +5,8 @@ var height = 450;
 var mouseX = 0;
 var mouseY = 0;
 var mouseIsPressed = false;
+var mouse2IsPressed = false;
+
 var mgraphics = new MGraphics(width, height);
 var outmatrix = new JitterMatrix(4, "char", width, height);
 // project specific vars
@@ -21,16 +23,20 @@ for (var i = 0; i < gridResolutionX; i++) {
 var modules = ["00.svg", "01.svg", "02.svg", "03.svg", "04.svg", "05.svg", "06.svg", "07.svg", "08.svg", "09.svg", "10.svg", "11.svg", "12.svg", "13.svg", "14.svg", "15.svg"];
 initTiles();
 
-reset();
-drawGrid();
+
+
 post("ready or not, here i come");
 post();
 
 function bang() {
     with(mgraphics) {
-
+        reset();
+drawGrid();
         if (mouseIsPressed) {
             setTile();
+        }
+        if(mouse2IsPressed){
+            unsetTile();
         }
         drawModules();
     }
@@ -190,8 +196,16 @@ function mousePressed() {
     y = mouseY;
 }
 
+function mouse2Pressed() {
+    mouse2IsPressed = true;
+}
+
 function mouseReleased() {
     mouseIsPressed = false;
+}
+
+function mouse2Released() {
+    mouse2IsPressed = false;
 }
 
 function map(value, istart, istop, ostart, ostop) {
