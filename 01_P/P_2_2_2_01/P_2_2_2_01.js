@@ -22,10 +22,11 @@ var posY = 5;
 var posXcross = posX;
 var posYcross = posY;
 
+mgraphics.set_source_rgba(1, 1, 1, 1);
+mgraphics.paint();
+
 function bang() {
     with(mgraphics) {
-        set_source_rgba(1, 1, 1, .01);
-        paint();
         for (var i = 0; i <= mouseX; i++) {
             set_line_width(1);
             set_source_rgba(.8, .8, .8, 1.);
@@ -54,8 +55,8 @@ function bang() {
                 direction = EAST;
                 reachedBorder = true;
             }
-                        var px = Math.round(posX);
-                        var py = Math.round(posY);
+                        var pX = Math.round(posX);
+                        var pY = Math.round(posY);
             if (getPixelVal(posX, posY) != 255 || reachedBorder) {
                 angle = getRandomAngle(direction);
                 var distance = dist(posX, posY, posXcross, posYcross);

@@ -24,10 +24,11 @@ var counter = 0;
 var posX = width / 2;
 var posY = height / 2;
 
+mgraphics.set_source_rgba(1, 1, 1, 1);
+mgraphics.paint();
+
 function bang() {
     with(mgraphics) {
-        set_source_rgba(1, 1, 1, .01);
-        paint();
         for (var i = 0; i <= mouseX; i++) {
             counter++;
             if (drawMode == 2) {

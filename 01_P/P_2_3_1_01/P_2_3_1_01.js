@@ -13,10 +13,11 @@ var angle = 0;
 var angleSpeed = 2.0;
 var color = [.70, .61, .0, .39]
 
+mgraphics.set_source_rgba(1, 1, 1, 1);
+mgraphics.paint();
+
 function bang() {
     with(mgraphics) {
-        set_source_rgba(1, 1, 1, .01);
-        paint();
         if (mouseIsPressed) {
             save();
             set_line_width(.5);
@@ -75,14 +76,15 @@ function mX(x) {
     mouseX = x;
 }
 
+function mY(y) {
+    mouseY = y;
+}
+
 function dist(x1, y1, x2, y2) {
     var theVal = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
     return theVal;
 }
 
-function mY(y) {
-    mouseY = y;
-}
 
 function mousePressed() {
     mouseIsPressed = true;

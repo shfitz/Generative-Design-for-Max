@@ -5,14 +5,10 @@ var height = 400;
 var mouseX = 0;
 var mouseY = 0;
 
-mgraphics.init();
-mgraphics.relative_coords = 0;
+var mgraphics = new MGraphics(width, height);
+var outmatrix = new JitterMatrix(4, "char", width, height);
 
 // project specific vars
-
-var outmatrix = new JitterMatrix(4, "char", 400, 400);
-
-
 var NORTH = 0;
 var NORTHEAST = 1;
 var EAST = 2;
@@ -29,13 +25,12 @@ var posX = width / 2;
 var posY = height / 2;
 
 //mgraphics.redraw();
+mgraphics.set_source_rgba(1, 1, 1, 1);
+mgraphics.paint();
 
-function paint() {
-    gc();
-    var theOut = null;
+function bang() {
+
   with(mgraphics) {
-    push_group();
- 
       set_source_rgba(0, 0, 0, .15);
 
       for (var i = 0; i <= mouseX; i++) {
@@ -73,12 +68,13 @@ function paint() {
 
     }
                 
-    	identity_matrix();
-		theOut = new Image(pop_group());
-		image_surface_draw(theOut);
+    
   }
-    theOut.tonamedmatrix(outmatrix.name);
+    var theImage = new Image(mgraphics);
+    theImage.tonamedmatrix(outmatrix.name);
     outlet(0, "jit_matrix", outmatrix.name);
+    gc();
+
 }
 
 
@@ -86,17 +82,12 @@ function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-function bang(){
-      mgraphics.redraw();
+function mX(x) {
+    mouseX = x;
 }
 
-function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
-  mouseX = x;
-  mouseY = y;
-}
-
-function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
-//  makeLines();
+function mY(y) {
+    mouseY = y;
 }
 
 function map(value, istart, istop, ostart, ostop) {

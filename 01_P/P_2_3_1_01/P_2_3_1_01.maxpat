@@ -44,7 +44,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 158.5, 691.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 157.5, 689.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "0"
 				}
@@ -58,7 +57,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 97.5, 684.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 100.0, 681.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "4"
 				}
@@ -72,7 +70,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 451.0, 722.0, 34.0, 22.0 ],
-					"presentation_rect" : [ 510.0, 728.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "right"
 				}
@@ -86,7 +83,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 422.0, 684.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 481.0, 693.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "left"
 				}
@@ -100,7 +96,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 399.0, 722.0, 39.0, 22.0 ],
-					"presentation_rect" : [ 458.0, 731.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "down"
 				}
@@ -126,7 +121,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 312.0, 83.0, 43.0, 22.0 ],
+					"patching_rect" : [ 257.0, 42.0, 43.0, 22.0 ],
 					"style" : "",
 					"text" : "fsaa 1"
 				}
@@ -140,7 +135,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 346.0, 691.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 465.0, 625.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "d"
 				}
@@ -432,7 +426,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 38.0, 124.0, 800.0, 450.0 ],
+					"patching_rect" : [ 38.0, 111.0, 800.0, 450.0 ],
 					"presentation_rect" : [ 0.0, 0.0, 800.0, 450.0 ]
 				}
 
