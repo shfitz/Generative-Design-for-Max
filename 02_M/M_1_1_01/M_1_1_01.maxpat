@@ -43,7 +43,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 414.0, 163.0, 55.0, 22.0 ],
+					"patching_rect" : [ 398.0, 208.0, 55.0, 22.0 ],
 					"style" : "",
 					"text" : "* 0.0016"
 				}
@@ -56,7 +56,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "bang", "bang" ],
-					"patching_rect" : [ 296.0, 72.0, 44.0, 22.0 ],
+					"patching_rect" : [ 361.0, 38.0, 44.0, 22.0 ],
 					"style" : "",
 					"text" : "t b b b"
 				}
@@ -240,7 +240,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 352.0, 21.0, 24.0, 24.0 ],
+					"patching_rect" : [ 361.0, -1.0, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -279,7 +279,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 414.0, 198.0, 35.0, 22.0 ],
+					"patching_rect" : [ 398.0, 243.0, 35.0, 22.0 ],
 					"style" : "",
 					"text" : "- 0.8"
 				}
@@ -292,7 +292,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 414.0, 134.0, 81.0, 22.0 ],
+					"patching_rect" : [ 398.0, 179.0, 81.0, 22.0 ],
 					"style" : "",
 					"text" : "random 1000"
 				}

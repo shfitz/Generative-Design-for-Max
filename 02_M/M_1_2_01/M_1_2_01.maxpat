@@ -232,7 +232,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 31.0, 199.0, 126.0, 49.0 ],
+					"patching_rect" : [ 31.0, 199.0, 127.0, 49.0 ],
 					"style" : "",
 					"text" : "jit.gl.render @erase_color 1 1 1 1 @fsaa 1"
 				}
@@ -263,7 +263,7 @@
 					"numinlets" : 9,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 224.0, 314.0, 195.0, 76.0 ],
+					"patching_rect" : [ 224.0, 314.0, 196.0, 76.0 ],
 					"style" : "",
 					"text" : "jit.gl.mesh @draw_mode points @poly_mode 1 1 @color 0. 0. 0. 0.1 @point_size 5 @blend_enable 1 @automatic 0 @scale 0.6 0.6 0.6 @color 0. 0.5 0.7 1."
 				}
@@ -439,15 +439,7 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "jit.-.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "jit.*.mxo",
-				"type" : "iLaX"
-			}
- ],
+		"dependency_cache" : [  ],
 		"autosave" : 0
 	}
 
