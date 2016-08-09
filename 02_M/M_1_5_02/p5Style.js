@@ -53,6 +53,7 @@ function mousePressed() {
     mouseIsPressed = true;
     x = mouseX;
     y = mouseY;
+    noise.seed(Math.random());
 }
 
 function mouse2Pressed() {

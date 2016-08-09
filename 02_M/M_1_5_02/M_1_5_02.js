@@ -53,6 +53,10 @@ function bang() {
     gc();
 }
 
+function setAgents(aNumber){
+  agentsCount  = aNumber;
+}
+
 
 // class for the movers
 function Agent() {
