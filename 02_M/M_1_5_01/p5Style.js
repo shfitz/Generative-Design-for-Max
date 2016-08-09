@@ -13,19 +13,14 @@ function randomInt(min, max) {
 }
 
 function keypressed(key) {
-    if (key == "49") currentShape = "01.svg";
-    if (key == "50") currentShape = "02.svg";
-    if (key == "51") currentShape = "03.svg";
-    if (key == "52") currentShape = "04.svg";
-    if (key == "53") currentShape = "05.svg";
-    if (key == "54") currentShape = "06.svg";
-    if (key == "55") currentShape = "07.svg";
-    if (key == "56") currentShape = "08.svg";
-    if (key == "57") currentShape = "09.svg";
-    if (key == "30") moduleSize += 5.0;
-    if (key == "31") moduleSize -= 5.0;
-    if (key == "28") stepSize -= 0.5;
-    if (key == "29") stepSize += 0.5;
+    post(key);
+    post();    
+    if (key == 49) drawMode = 1;
+    post("drawMode1");
+    post();
+    if (key == 50) drawMode = 2;
+     post("drawMode2");
+    post();  
 }
 
 function toRadians(angleDegrees) {

@@ -13,8 +13,8 @@ var mgraphics = new MGraphics(width, height);
 var outmatrix = new JitterMatrix(4, "char", width, height);
 // project specific vars
 var agentsCount = 2000;
-var noiseScale = 300;
-var noiseStrength = 10;
+var noiseScale = 150;
+var noiseStrength = 5;
 var agentsAlpha = 90 / 255;
 var overlayAlpha = 10 / 255;
 var drawMode = 1;
@@ -83,8 +83,8 @@ function Agent() {
         this.isOutside = false;
     }
     this.update2= function () {
-        this.angle = noise.simplex2(this.p.x / noiseScale, this.p.y / noiseScale) * 24; // maybe 12?
-        this.angle = (this.angle - this.angle) * noiseStrength;
+        this.angle = noise.simplex2(this.p.x / noiseScale, this.p.y / noiseScale) * 12.0; // maybe 12?
+        this.angle = (this.angle - Math.round(this.angle)) * noiseStrength;
         this.p.x += Math.cos(this.angle) * this.stepSize;
         this.p.y += Math.sin(this.angle) * this.stepSize;
         if (this.p.x < -10) this.isOutside = true;
