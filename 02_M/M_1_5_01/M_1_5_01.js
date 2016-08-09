@@ -48,21 +48,11 @@ function bang() {
                 set_source_rgba(arcColor);
                 arc((tileSize)/ 2 - tileSize*.25, (tileSize ) / 2- tileSize*.25,tileSize*.33,0, angle);
                 var thisSpot = get_current_point();
-//                stroke_preserve();
-//                set_source_rgba(0,0,0,1);
-                
 
-                
                 move_to((tileSize)/ 2 - tileSize*.25, (tileSize ) / 2- tileSize*.25);
                 line_to(thisSpot[0], thisSpot[1]);
         
                 stroke();
-               
-             
-//              move_to(10, 10);
-//              rotate(angle);
-               
-//                stroke();
                 restore();
                 
             }
