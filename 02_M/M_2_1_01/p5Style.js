@@ -15,6 +15,15 @@ function randomInt(min, max) {
 function keypressed(key) {
     post(key);
     post();
+    
+      if (key == '97' ) doDrawAnimation = !doDrawAnimation;
+
+  if (key == '49') freq--;
+  if (key == '50') freq++;
+  freq = Math.max(freq, 1);
+
+  if (key == '28') phi -= 15;
+  if (key == '29') phi += 15;
 }
 
 function toRadians(angleDegrees) {

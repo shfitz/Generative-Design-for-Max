@@ -25,7 +25,7 @@ post();
 function bang() {
     frameCount++;
     mgraphics.set_source_rgba(1.0, 1.0, 1.0, 1.0);
-    mgraphics.rectangle(0,0, width, height);
+    mgraphics.rectangle(0, 0, width, height);
     mgraphics.fill();
     with(mgraphics) {
         set_source_rgba(0.0, 0.0, 0.0, 1.0);
@@ -47,9 +47,8 @@ function bang() {
             line_to(i + 1, y + 1);
             stroke();
         }
-
-        if(doDrawAnimation) drawAnimation();
-         restore();       
+        if (doDrawAnimation) drawAnimation();
+        restore();
     }
     var theImage = new Image(mgraphics);
     theImage.tonamedmatrix(outmatrix.name);
@@ -58,68 +57,61 @@ function bang() {
 }
 
 function drawAnimation() {
-    
-  var t = (frameCount/pointCount) % 1;
-  angle = map(t, 0, 1, 0, 6.28);
-  var x = Math.cos(angle*freq + toRadians(phi));
-  x = x*100 - 125;
-  y = Math.sin(angle*freq + toRadians(phi));
-  y = y * 100;
-  // circle
-  mgraphics.set_line_width(1);
-  mgraphics.ellipse(-125-100, -100, 200, 200);
+    var t = (frameCount / pointCount) % 1;
+    angle = map(t, 0, 1, 0, 6.28);
+    var x = Math.cos(angle * freq + toRadians(phi));
+    x = x * 100 - 125;
+    y = Math.sin(angle * freq + toRadians(phi));
+    y = y * 100;
+    // circle
+    mgraphics.set_line_width(1);
+    mgraphics.ellipse(-125 - 100, -100, 200, 200);
     mgraphics.stroke();
-  // lines
-  mgraphics.set_source_rgba(0,0,0,.5);
-    mgraphics.move_to(0,-100);
+    // lines
+    mgraphics.set_source_rgba(0, 0, 0, .5);
+    mgraphics.move_to(0, -100);
     mgraphics.line_to(0, 100);
     mgraphics.stroke();
-    mgraphics.move_to(0,0);
+    mgraphics.move_to(0, 0);
     mgraphics.line_to(pointCount, 0);
     mgraphics.stroke();
-    mgraphics.move_to(-225,0);
+    mgraphics.move_to(-225, 0);
     mgraphics.line_to(-25, 0);
     mgraphics.stroke();
-    mgraphics.move_to(-125,-100);
+    mgraphics.move_to(-125, -100);
     mgraphics.line_to(-125, 100);
     mgraphics.stroke();
-    mgraphics.move_to(x,y);
+    mgraphics.move_to(x, y);
     mgraphics.line_to(-125, 0);
     mgraphics.stroke();
-
-
-  mgraphics.set_source_rgba(0,0.5,0.7,1.);
-  mgraphics.set_line_width(2);
-    mgraphics.move_to(t*pointCount, y);
-    mgraphics.line_to(t*pointCount, 0);
+    mgraphics.set_source_rgba(0, 0.5, 0.7, 1.);
+    mgraphics.set_line_width(2);
+    mgraphics.move_to(t * pointCount, y);
+    mgraphics.line_to(t * pointCount, 0);
     mgraphics.stroke();
-    mgraphics.move_to(x,y);
+    mgraphics.move_to(x, y);
     mgraphics.line_to(x, 0);
-    mgraphics.stroke();    
-
-
-  var phiX = Math.cos(toRadians(phi))*100-125;
-  var phiY = Math.sin(toRadians(phi))*100;
-  // phi line
-  mgraphics.set_line_width(1);
-  mgraphics.set_source_rgba(0,0,0 ,.5);
-  mgraphics.move_to(-125, 0);
-  mgraphics.line_to(phiX, phiY);
-  mgraphics.stroke();
-  // phi dots
-  mgraphics.set_source_rgba(0, 0, 0, 1);
-  mgraphics.ellipse(0-4, phiY-4, 8, 8);
-  mgraphics.ellipse(phiX-4, phiY-4, 8, 8);
-  mgraphics.ellipse(t*pointCount-5, y-5, 10, 10);
-  mgraphics.ellipse(x-5, y-5, 10, 10);
-  mgraphics.fill();
-  mgraphics.set_source_rgba(1,1,1,1);
-  mgraphics.set_line_width(2);
-  mgraphics.ellipse(0-4, phiY-4, 8, 8);
-  mgraphics.ellipse(phiX-4, phiY-4, 8, 8);
-  mgraphics.ellipse(t*pointCount-5, y-5, 10, 10);
-  mgraphics.ellipse(x-5, y-5, 10, 10);
-  mgraphics.stroke();
-  
-    
+    mgraphics.stroke();
+    var phiX = Math.cos(toRadians(phi)) * 100 - 125;
+    var phiY = Math.sin(toRadians(phi)) * 100;
+    // phi line
+    mgraphics.set_line_width(1);
+    mgraphics.set_source_rgba(0, 0, 0, .5);
+    mgraphics.move_to(-125, 0);
+    mgraphics.line_to(phiX, phiY);
+    mgraphics.stroke();
+    // phi dots
+    mgraphics.set_source_rgba(0, 0, 0, 1);
+    mgraphics.ellipse(0 - 4, phiY - 4, 8, 8);
+    mgraphics.ellipse(phiX - 4, phiY - 4, 8, 8);
+    mgraphics.ellipse(t * pointCount - 5, y - 5, 10, 10);
+    mgraphics.ellipse(x - 5, y - 5, 10, 10);
+    mgraphics.fill();
+    mgraphics.set_source_rgba(1, 1, 1, 1);
+    mgraphics.set_line_width(2);
+    mgraphics.ellipse(0 - 4, phiY - 4, 8, 8);
+    mgraphics.ellipse(phiX - 4, phiY - 4, 8, 8);
+    mgraphics.ellipse(t * pointCount - 5, y - 5, 10, 10);
+    mgraphics.ellipse(x - 5, y - 5, 10, 10);
+    mgraphics.stroke();
 }
