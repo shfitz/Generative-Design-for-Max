@@ -57,6 +57,14 @@ function setAgents(aNumber){
   agentsCount  = aNumber;
 }
 
+function setNoiseScale(scale){
+  noiseScale  = scale;
+}
+
+function setNoiseStrength(strong){
+  noiseStrength  = strong;
+}
+
 
 // class for the movers
 function Agent() {
