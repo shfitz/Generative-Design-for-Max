@@ -68,6 +68,7 @@ Vector.prototype = {
     , get: function() {
         return new Vector(this.x, this.y, this.z);
     },
+    // this came from the p5js PVector class
     set :function(x, y, z){
         if (x instanceof Vector) { return this.set(x.x, x.y, x.z); }
      if (x instanceof Array) { return this.set(x[0], x[1], x[2]); }
