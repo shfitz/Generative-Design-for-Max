@@ -44,7 +44,7 @@ function bang() {
             y = Math.sin(angle * freq + toRadians(phi));
             y = y * 100.;
             move_to(i, y);
-            line_to(i + 1, y + 1);
+            line_to(i+1, y+1);
             stroke();
         }
         if (doDrawAnimation) drawAnimation();
